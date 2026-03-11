@@ -1,64 +1,7 @@
-#include <iostream>
+Ôªø#include <iostream>
+#include "StringUtil.h"
 
 using namespace std;
-
-//πÆ¿⁄ø≠ ±Ê¿Ã ºº±‚
-int StrLen(char* str, int ArrSize)
-{
-	for (int i = 0; i < ArrSize; ++i)
-	{
-		if (str[i] == '\0')
-		{
-			return i;
-		}
-		++i;
-	}
-
-}
-
-//∆Ø¡§ πÆ¿⁄∏¶ πŸ≤Ÿ±‚
-void ChangeChar(char* str, char S, char C, int Strlen)
-{
-	cout << "«ˆ¿Á πÆ¿⁄ø≠ (" << str << ") ¡ﬂ πŸ≤‹ πÆ¿⁄øÕ π´æ˘¿∏∑Œ πŸ≤‹¡ˆ ¿‘∑¬«œΩ√ø¿. (øπΩ√, H J) : ";
-	cin >> S >> C;
-
-	for (int i = 0; i < Strlen; ++i)
-	{
-		if (str[i] == S)
-		{
-			str[i] = C;
-			break;
-		}
-		else if(str[i] == '\0')
-		{
-			cout << "º±≈√«— πÆ¿⁄¥¬ æ¯¥¬ πÆ¿⁄¿‘¥œ¥Ÿ." << endl;
-			break;
-		}
-		i++;
-	}
-	cout << "«ˆ¿Á πÆ¿⁄ø≠ : " << str << endl;
-}
-
-//πÆ¿⁄ø≠ ¡ﬂ ∆Ø¡§ πÆ¿⁄ ¿ßƒ° √£±‚
-int FindChar(char* str, char C, int Strlen)
-{
-	cout << "«ˆ¿Á πÆ¿⁄ø≠ (" << str << ") ¡ﬂ √£∞Ì ΩÕ¿∫ πÆ¿⁄∏¶ ¿‘∑¬«œΩ√ø¿ : ";
-	cin >> C;
-
-	for (int i = 0; i < Strlen; ++i)
-	{
-		if (str[i] == C)
-		{
-			return i;
-		}
-		else if (str[i] == '\0')
-		{
-			return -1;
-		}
-		i++;
-	}
-}
-
 
 int main()
 {
@@ -67,7 +10,14 @@ int main()
 	char CurrentWord{};
 	char FindWord{};
 
-	cout << "πÆ¿⁄ø≠¿« ∞πºˆ : " << StrLen(Str, sizeof(Str)) << endl;
+	cout << "Î¨∏ÏûêÏó¥Ïùò Í∞ØÏàò : " << StrLen(Str, sizeof(Str)) << endl;
 	ChangeChar(Str, PrevWord, CurrentWord, StrLen(Str, sizeof(Str)));
-	cout << "√£¿ª πÆ¿⁄¿« ¿ßƒ°(-1¿Ã∏È «ÿ¥Á πÆ¿⁄¥¬ æ¯Ω¿¥œ¥Ÿ.) : " << FindChar(Str, FindWord, StrLen(Str, sizeof(Str))) << "π¯¬∞." << endl;
+	cout << "Ï∞æÏùÑ Î¨∏ÏûêÏùò ÏúÑÏπò(-1Ïù¥Î©¥ Ìï¥Îãπ Î¨∏ÏûêÎäî ÏóÜÏäµÎãàÎã§.) : " << FindChar(Str, FindWord, StrLen(Str, sizeof(Str))) << "Î≤àÏß∏." << endl;
+
+	int* p = new int;
+
+	delete p;
+	p = nullptr;
+
+	return 0;
 }
