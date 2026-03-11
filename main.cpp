@@ -2,7 +2,6 @@
 
 using namespace std;
 
-
 //문자열 길이 세기
 int StrLen(char* str)
 {
@@ -64,7 +63,6 @@ int FindChar(char* str, char C, int Strlen)
 
 int main()
 {
-
 	char Str[6] = { 'H', 'e', 'l', 'l', 'o', '\0'};
 	char PrevWord{};
 	char CurrentWord{};
@@ -73,5 +71,4 @@ int main()
 	cout << "문자열의 갯수 : " << StrLen(Str) << endl;
 	ChangeChar(Str, PrevWord, CurrentWord, StrLen(Str));
 	cout << "찾을 문자의 위치(-1이면 해당 문자는 없습니다.) : " << FindChar(Str, FindWord, StrLen(Str)) << "번째." << endl;
-	
 }
