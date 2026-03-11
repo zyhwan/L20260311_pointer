@@ -14,10 +14,5 @@ int main()
 	ChangeChar(Str, PrevWord, CurrentWord, StrLen(Str, sizeof(Str)));
 	cout << "찾을 문자의 위치(-1이면 해당 문자는 없습니다.) : " << FindChar(Str, FindWord, StrLen(Str, sizeof(Str))) << "번째." << endl;
 
-	int* p = new int;
-
-	delete p;
-	p = nullptr;
-
 	return 0;
 }
