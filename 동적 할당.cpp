@@ -18,5 +18,6 @@ int main()
 	}
 
 	delete[] p;
+	p = nullptr;
 
 }
