@@ -3,18 +3,17 @@
 using namespace std;
 
 //문자열 길이 세기
-int StrLen(char* str)
+int StrLen(char* str, int ArrSize)
 {
-	int count = 0;
-
-	for (;;)
+	for (int i = 0; i < ArrSize; ++i)
 	{
-		if (str[count] == '\0')
+		if (str[i] == '\0')
 		{
-			return (count + 1);
+			return i;
 		}
-		++count;
+		++i;
 	}
+
 }
 
 //특정 문자를 바꾸기
@@ -63,12 +62,12 @@ int FindChar(char* str, char C, int Strlen)
 
 int main()
 {
-	char Str[6] = { 'H', 'e', 'l', 'l', 'o', '\0'};
+	char Str[100] = { 'H', 'e', 'l', 'l', 'o', '\0'};
 	char PrevWord{};
 	char CurrentWord{};
 	char FindWord{};
 
-	cout << "문자열의 갯수 : " << StrLen(Str) << endl;
-	ChangeChar(Str, PrevWord, CurrentWord, StrLen(Str));
-	cout << "찾을 문자의 위치(-1이면 해당 문자는 없습니다.) : " << FindChar(Str, FindWord, StrLen(Str)) << "번째." << endl;
+	cout << "문자열의 갯수 : " << StrLen(Str, sizeof(Str)) << endl;
+	ChangeChar(Str, PrevWord, CurrentWord, StrLen(Str, sizeof(Str)));
+	cout << "찾을 문자의 위치(-1이면 해당 문자는 없습니다.) : " << FindChar(Str, FindWord, StrLen(Str, sizeof(Str))) << "번째." << endl;
 }
